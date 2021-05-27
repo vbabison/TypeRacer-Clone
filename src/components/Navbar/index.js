@@ -13,18 +13,19 @@ const Navbar = () => {
     <>
       <Nav>
         <NavLink to='/'>
-          <img src={require('../../images/logo.png')} alt='logo' />
+          {/* <img src={require('../../images/logo.png')} alt='logo' /> */}
+          <h1>TypeRace</h1>
         </NavLink>
         <Bars />
         <NavMenu>
-          <NavLink to='/about' activeStyle>
-            About
+          <NavLink to='/race' activeStyle>
+            Race
           </NavLink>
-          <NavLink to='/services' activeStyle>
-            Services
+          <NavLink to='/charts' activeStyle>
+            Charts
           </NavLink>
-          <NavLink to='/contact-us' activeStyle>
-            Contact Us
+          <NavLink to='/wpm' activeStyle>
+            WPM
           </NavLink>
           <NavLink to='/sign-up' activeStyle>
             Sign Up
