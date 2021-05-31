@@ -1,5 +1,4 @@
 export default () => {
-#FIND TEXT FROM THE BEE MOVIE AND INPUT IT IN HERE
   const texts = [
     "We must be willing to let go of the life we have planned, so as to have the life that is waiting for us."
     + " Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor."
