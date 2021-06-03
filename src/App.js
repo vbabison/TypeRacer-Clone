@@ -45,7 +45,6 @@ function App(props) {
             )}
           </div>
         </div>
-      
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/race' component={Race} />
