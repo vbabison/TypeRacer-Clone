@@ -3,6 +3,11 @@ import Preview from '../components/race/Preview';
 import Speed from '../components/race/Speed';
 import getText from '../components/race/getText';
 import './race.css';
+const express = require('express');
+const app = express();
+const socketio = require('socket.io');
+const mongoose = require('mongoose');
+const expressServer = app.listen(3001);
 
 const initialState = {
   text: getText(),

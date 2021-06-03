@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
   Nav,
   NavLink,
@@ -7,8 +8,9 @@ import {
   NavBtn,
   NavBtnLink
 } from './NavbarElements';
-
-const Navbar = () => {
+  
+const Navbar = (props) => {
+  const { currentUser, setShowModal, logOut } = props;
   return (
     <>
       <Nav>
@@ -34,7 +36,11 @@ const Navbar = () => {
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/login'>Sign In</NavBtnLink>
+          {currentUser ? (
+                <a href="/" onClick={logOut}>LogOut</a>
+            ) : (
+              <NavBtnLink to='/login' onClick={setShowModal}>Sign In</NavBtnLink>
+            )}
         </NavBtn>
       </Nav>
     </>
