@@ -27,14 +27,14 @@ const Navbar = () => {
           <NavLink to='/wpm' activeStyle>
             WPM
           </NavLink>
-          <NavLink to='/sign-up' activeStyle>
-            Sign Up
-          </NavLink>
+          {/*  <NavLink to='/login' activeStyle>
+            Login
+          </NavLink> */}
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
+          <NavBtnLink to='/login'>Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
     </>

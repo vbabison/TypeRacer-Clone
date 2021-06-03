@@ -6,7 +6,7 @@ import Home from './pages';
 import Race from './pages/race';
 import Charts from './pages/charts';
 import WPM from './pages/wpm';
-import SignUp from './pages/signup';
+import Login from './pages/login';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path='/race' component={Race} />
         <Route path='/charts' component={Charts} />
         <Route path='/wpm' component={WPM} />
-        <Route path='/sign-up' component={SignUp} />
+        <Route path='/login' component={Login} />
       </Switch>
     </Router>
   );
