@@ -106,7 +106,6 @@ const Register = (props) => {
     return (
         <section className="login">
             <div className="loginContainer">
-
                 <Form onSubmit={handleRegister} ref={form}>
                     {!successful && (
                         <div>

@@ -35,9 +35,16 @@ function App(props) {
   }
 
   return (
-    <Router history={history}>
+    <Router>
       <Nav currentUser={currentUser} setShowModal={setShowModal} logOut={logOut} />
-      <div id="popupModal" className="overlay" style={{visibility: showModal ? 'visible' : 'hidden', opacity: showModal ? 1 : 0}}>
+      
+      <Switch>
+        <Route exact path='/' component={GameMenu} />
+        <Route path='/race' component={Race} />
+        <Route path='/charts' component={Charts} />
+        <Route path='/wpm' component={WPM} />
+        <Route path='/login' component={Login} >
+        <div id="popupModal" className="overlay" style={{visibility: showModal ? 'visible' : 'hidden', opacity: showModal ? 1 : 0}}>
           <div className="popup">
             <a className="close" href="#" onClick={closeModal}>&times;</a>
             {!hasAccount ? (
@@ -47,12 +54,7 @@ function App(props) {
             )}
           </div>
         </div>
-      <Switch>
-        <Route exact path='/' component={GameMenu} />
-        <Route path='/race' component={Race} />
-        <Route path='/charts' component={Charts} />
-        <Route path='/wpm' component={WPM} />
-        <Route path='/login' component={Login} />
+        </Route>
       </Switch>
     </Router>
   );
