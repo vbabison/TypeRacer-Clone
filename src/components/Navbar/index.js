@@ -26,8 +26,8 @@ const Navbar = (props) => {
           <NavLink to='/charts' activeStyle>
             Charts
           </NavLink>
-          <NavLink to='/wpm' activeStyle>
-            WPM
+          <NavLink to='/passages' activeStyle>
+            Passages
           </NavLink>
           {/*  <NavLink to='/login' activeStyle>
             Login

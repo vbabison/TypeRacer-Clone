@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages';
 import Race from './pages/race';
 import Charts from './pages/charts';
-import WPM from './pages/wpm';
+import Passages from './pages/passages';
 import Session from "./components/Session";
 import Login from './pages/login';
 import Register from './pages/register';
@@ -42,7 +42,7 @@ function App(props) {
         <Route exact path='/' component={GameMenu} />
         <Route path='/race' component={Race} />
         <Route path='/charts' component={Charts} />
-        <Route path='/wpm' component={WPM} />
+        <Route path='/passages' component={Passages} />
         <Route path='/login' component={Login} >
         <div id="popupModal" className="overlay" style={{visibility: showModal ? 'visible' : 'hidden', opacity: showModal ? 1 : 0}}>
           <div className="popup">
