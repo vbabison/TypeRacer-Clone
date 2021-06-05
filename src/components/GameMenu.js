@@ -6,10 +6,10 @@ const GameMenu = (props) => {
   return (
     <div classnName="text-center">
       <h1>Welcome to Type Race</h1>
-      <button type="button" onClick={()=> history.push('/game/create')}
-                            className='btn btn-primary btn-lg mr-3'>Create Game</button>
+      <button type="button" onClick={()=> history.push('/race')}
+                            className='btn btn-primary btn-lg mr-3'>Start Single Player</button>
       <button type="button" onClick={()=> history.push('/game/join')}
-                            className='btn btn-primary btn-lg'>Join Game</button>
+                            className='btn btn-primary btn-lg'>Join Multi-Player</button>
     </div>
   );
 };
