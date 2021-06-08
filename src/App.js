@@ -10,7 +10,7 @@ import Session from "./components/Session";
 import Login from './pages/login';
 import Register from './pages/register';
 import AuthService from "./pages/services/auth.service";
-import history from './history';
+import Multiplayer from './pages/Multiplayer';
 import GameMenu from './components/GameMenu';
 
 function App(props) {
@@ -43,6 +43,7 @@ function App(props) {
         <Route path='/race' component={Race} />
         <Route path='/charts' component={Charts} />
         <Route path='/passages' component={Passages} />
+        <Route path="/game/join" component={Multiplayer} />
         <Route path='/login' component={Login} >
         <div id="popupModal" className="overlay" style={{visibility: showModal ? 'visible' : 'hidden', opacity: showModal ? 1 : 0}}>
           <div className="popup">
