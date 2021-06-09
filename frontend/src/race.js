@@ -3,14 +3,17 @@ import Preview from './components/race/Preview';
 import Speed from './components/race/Speed';
 import getText from './components/race/getText';
 import './race.css';
+import axios from 'axios';
+import AuthService from "./services/auth.service";
 
 const initialState = {
   text: getText(),
   userInput: '',
   symbols: 0,
   sec: 0,
+  wpm: 0,
   started: false,
-  finished: false
+  finished: false,
 }
 
 class Race extends Component {
@@ -32,7 +35,16 @@ class Race extends Component {
   }
 
   onFinish(userInput) {
+    const { wpm } = this.state;
     if (userInput === this.state.text) {
+      axios({
+        method: 'post',
+        url: 'http://localhost:5000/race',
+        data: {
+          user: AuthService.getCurrentUser(),
+          wpm: Math.round(((this.state.symbols/5) / (this.state.sec/60))),
+        }
+      });
       clearInterval(this.interval);
       this.setState({
         finished: true
@@ -55,14 +67,14 @@ class Race extends Component {
       }, 1000)
     }
   }
-
+  
   render() {
     return (
       <div className="container mt-5 mb-5">
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <Preview text={this.state.text} userInput={this.state.userInput}/>
-            <textarea
+            <Preview id="textarea" text={this.state.text} userInput={this.state.userInput}/>
+            <textarea 
               value={this.state.userInput}
               onChange={this.onUserInputChange}
               className="form-control mb-3"

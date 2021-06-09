@@ -1,6 +1,14 @@
 import React from 'react';
+import axios from 'axios';
 
-const Contact = () => {
+const WPM = () => {
+  axios({
+    method: 'GET',
+    url: 'http://localhost:5000/wpm',
+    success: function(response){
+    }
+  });
+
   return (
     <div
       style={{
@@ -15,4 +23,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default WPM;
