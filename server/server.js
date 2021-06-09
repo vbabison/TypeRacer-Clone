@@ -43,6 +43,54 @@ db.connect();
 
 let Util = require('./services/UtilityService');
 
+app.post('/race', function(req, res) {
+  // console.log(req.body.user.id)
+  // console.log(req.body.wpm)
+  const user_id = req.body.user.id;
+  const wpm = req.body.wpm;
+  const queryString = `UPDATE users SET wpm = ${wpm} WHERE id=${user_id};`;
+
+  db.query(queryString)
+      .then((result) => {
+        res.json({
+          success: true,
+          data: result.rows[0]
+        });
+      })
+      .catch((err) => res.json({success: false, data: err}));
+})
+
+app.post("/passage", (req, res) => { 
+
+})
+
+app.get("/charts", (req, res) => {
+  const queryString = `SELECT * FROM users;`;
+
+  db.query(queryString)
+      .then((result) => {
+        console.log(result)
+        res.json({
+          success: true,
+          data: result.rows
+        });
+      })
+      .catch((err) => res.json({success: false, data: err}));
+});
+
+app.get("/passages", (req, res) => {
+  const queryString = `SELECT * FROM passages;`;
+
+  db.query(queryString)
+      .then((result) => {
+        console.log(result)
+        res.json({
+          success: true,
+          data: result.rows
+        });
+      })
+      .catch((err) => res.json({success: false, data: err}));
+});
 
 app.post('/register', function(req, res) {
 
