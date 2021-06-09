@@ -34,9 +34,8 @@ export default function Passages() {
   }, []);
   const classes = useStyles();
 
-  function handleClick(e) {
-    e.preventDefault();
-    console.log(stats.map((row) => (row.string)));
+  function handleClick(rows) {
+    console.log(rows.target);
   }
   
   return (
@@ -44,7 +43,7 @@ export default function Passages() {
       {stats.map((row) => (
       <Grid onClick={handleClick} container spacing={1}>
         <Grid container item xs={12} spacing={3} className={classes.row}>
-          <React.Fragment>
+          <React.Fragment onClick={handleClick(row.id)}>
             <Grid item xs={6}>
               <Paper className={classes.paper}>{row.string}</Paper>
             </Grid>
