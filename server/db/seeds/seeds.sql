@@ -7,7 +7,6 @@ VALUES ('Nick Cage', 'nick@example.com', 'password', 122);
 INSERT INTO users (name, email, password, wpm)
 VALUES ('John Dough', 'dough@example.com', 'password', 121);
 
-
 INSERT INTO passages (string)
 VALUES ('We must be willing to let go of the life we have planned, so as to have the life that is waiting for us. Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.');
 
@@ -31,3 +30,7 @@ VALUES ('It needs to be said and heard: its OK to be who you are. I think its gr
 
 INSERT INTO passages (string)
 VALUES ('Ill never forget where Im from. Its essential to remain humble and evolving. If you’re doing something outside of dominant culture, there’s not an easy place for you. You will have to do it yourself.');
+
+
+INSERT INTO stats (user_id, passage_id, wpm)
+VALUES (1, 1, 121);

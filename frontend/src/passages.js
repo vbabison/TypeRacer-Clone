@@ -34,10 +34,15 @@ export default function Passages() {
   }, []);
   const classes = useStyles();
 
+  function handleClick(e) {
+    e.preventDefault();
+    console.log(stats.map((row) => (row.string)));
+  }
+  
   return (
     <div className={classes.root}>
       {stats.map((row) => (
-      <Grid onclick="myFunction()" container spacing={1}>
+      <Grid onClick={handleClick} container spacing={1}>
         <Grid container item xs={12} spacing={3} className={classes.row}>
           <React.Fragment>
             <Grid item xs={6}>

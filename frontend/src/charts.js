@@ -19,14 +19,6 @@ function createData(number, speed, when, user) {
   return { number, speed, when, user };
 }
 
-const rows = [
-  createData('1', 298, '2021/06/8', 'John'),
-  createData('2', 285, '2021/06/8', 'Steve'),
-  createData('3', 279, '2021/06/8', 'April'),
-  createData('4', 276, '2021/06/8', 'Kevin'),
-  createData('5', 226, '2021/06/8', 'Bobby'),
-];
-
 export default function Charts() {
   const [stats, setStats] = useState([])
   useEffect(() => {
@@ -48,7 +40,6 @@ export default function Charts() {
           <TableRow>
             <TableCell>#</TableCell>
             <TableCell align="right">Speed</TableCell>
-            <TableCell align="right">When</TableCell>
             <TableCell align="right">	User</TableCell>
           </TableRow>
         </TableHead>
@@ -59,7 +50,6 @@ export default function Charts() {
                 {row.id}
               </TableCell>
               <TableCell align="right">{row.wpm}</TableCell>
-              <TableCell align="right">{row.when}</TableCell>
               <TableCell align="right">{row.name}</TableCell>
             </TableRow>
           ))}

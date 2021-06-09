@@ -9,7 +9,7 @@ CREATE TABLE users (
 CREATE TABLE stats (
   user_id SERIAL PRIMARY KEY NOT NULL,
   wpm VARCHAR(255),
-  passage_id SERIAL PRIMARY KEY NOT NULL
+  passage_id VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE passages (
@@ -18,6 +18,6 @@ CREATE TABLE passages (
 );
 
 CREATE TABLE wpm (
-  id SERIAL PRIMARY KEY NOT NULL,
+  user_id SERIAL PRIMARY KEY NOT NULL,
   string text NOT NULL
 );
